@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Carousel Template &middot; Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+         <style>
+
+      /* GLOBAL STYLES
+      -------------------------------------------------- */
+      /* Padding below the footer and lighter body text */
+  
+      body {
+        padding-bottom: 40px;
+        color: #5a5a5a;
+      }
+  
+  
+  
+      /* CUSTOMIZE THE NAVBAR
+      -------------------------------------------------- */
+  
+      /* Special class on .container surrounding .navbar, used for positioning it into place. */
+      .navbar-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        margin-top: 20px;
+        margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+      }
+      .navbar-wrapper .navbar {
+  
+      }
+  
+      /* Remove border and change up box shadow for more contrast */
+      .navbar .navbar-inner {
+        border: 0;
+        -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+           -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+                box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      }
+  
+      /* Downsize the brand/project name a bit */
+      .navbar .brand {
+        padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+        font-size: 16px;
+        font-weight: bold;
+        text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+      }
+  
+      /* Navbar links: increase padding for taller navbar */
+      .navbar .nav > li > a {
+        padding: 15px 20px;
+      }
+  
+      /* Offset the responsive button for proper vertical alignment */
+      .navbar .btn-navbar {
+        margin-top: 10px;
+      }
+  
+  
+  
+      /* CUSTOMIZE THE CAROUSEL
+      -------------------------------------------------- */
+  
+      /* Carousel base class */
+      .carousel {
+        margin-bottom: 60px;
+      }
+  
+      .carousel .container {
+        position: relative;
+        z-index: 9;
+      }
+  
+      .carousel-control {
+        height: 80px;
+        margin-top: 0;
+        font-size: 120px;
+        text-shadow: 0 1px 1px rgba(0,0,0,.4);
+        background-color: transparent;
+        border: 0;
+        z-index: 10;
+      }
+  
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        height: 500px;
+      }
+  
+      .carousel-caption {
+        background-color: transparent;
+        position: static;
+        max-width: 550px;
+        padding: 0 20px;
+        margin-top: 200px;
+      }
+      .carousel-caption h1,
+      .carousel-caption .lead {
+        margin: 0;
+        line-height: 1.25;
+        color: #fff;
+        text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      }
+      .carousel-caption .btn {
+        margin-top: 10px;
+      }
+  
+  
+  
+      /* MARKETING CONTENT
+      -------------------------------------------------- */
+  
+      /* Center align the text within the three columns below the carousel */
+      .marketing .span4 {
+        text-align: center;
+      }
+      .marketing h2 {
+        font-weight: normal;
+      }
+      .marketing .span4 p {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+  
+  
+      /* Featurettes
+      ------------------------- */
+  
+      .featurette-divider {
+        margin: 80px 0; /* Space out the Bootstrap <hr> more */
+      }
+      .featurette {
+        padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+        overflow: hidden; /* Vertically center images part 2: clear their floats. */
+      }
+      .featurette-image {
+        margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+      }
+  
+      /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+      .featurette-image.pull-left {
+        margin-right: 40px;
+      }
+      .featurette-image.pull-right {
+        margin-left: 40px;
+      }
+  
+      /* Thin out the marketing headings */
+      .featurette-heading {
+        font-size: 50px;
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -1px;
+      }
+  
+  
+  
+      /* RESPONSIVE CSS
+      -------------------------------------------------- */
+  
+      @media (max-width: 979px) {
+  
+        .container.navbar-wrapper {
+          margin-bottom: 0;
+          width: auto;
+        }
+        .navbar-inner {
+          border-radius: 0;
+          margin: -20px 0;
+        }
+  
+        .carousel .item {
+          height: 500px;
+        }
+        .carousel img {
+          width: auto;
+          height: 500px;
+        }
+  
+        .featurette {
+          height: auto;
+          padding: 0;
+        }
+        .featurette-image.pull-left,
+        .featurette-image.pull-right {
+          display: block;
+          float: none;
+          max-width: 40%;
+          margin: 0 auto 20px;
+        }
+      }
+  
+  
+      @media (max-width: 767px) {
+  
+        .navbar-inner {
+          margin: -20px;
+        }
+  
+        .carousel {
+          margin-left: -20px;
+          margin-right: -20px;
+        }
+        .carousel .container {
+  
+        }
+        .carousel .item {
+          height: 300px;
+        }
+        .carousel img {
+          height: 300px;
+        }
+        .carousel-caption {
+          width: 65%;
+          padding: 0 70px;
+          margin-top: 100px;
+        }
+        .carousel-caption h1 {
+          font-size: 30px;
+        }
+        .carousel-caption .lead,
+        .carousel-caption .btn {
+          font-size: 18px;
+        }
+  
+        .marketing .span4 + .span4 {
+          margin-top: 40px;
+        }
+  
+        .featurette-heading {
+          font-size: 30px;
+        }
+        .featurette .lead {
+          font-size: 18px;
+          line-height: 1.5;
+        }
+  
+      }
+      </style>
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="https://cdn.pixabay.com/photo/2017/12/16/16/37/great-wall-3022907_1280.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>长城</h1>
+              <p class="lead">长城（The Great Wall），又称万里长城，
+                是中国古代的军事防御工事，是一道高大、坚固而且连绵不断的长垣，用以限隔敌骑的行动。</p>
+              <a class=" btn btn-large btn-primary" href="#changcheng">了解更多</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="https://cdn.pixabay.com/photo/2016/03/04/22/54/panda-1236875_1280.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>熊猫</h1>
+              <p class="lead">大熊猫已在地球上生存了至少800万年，被誉为“活化石”和“中国国宝”，世界自然基金会的形象大使，是世界生物多样性保护的旗舰物种</p>
+              <a class="btn btn-large btn-primary" href="#cat">了解更多</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="https://cdn.pixabay.com/photo/2016/11/08/05/51/agriculture-1807576_1280.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>水稻</h1>
+              <p class="lead">水稻按稻谷类型分为籼稻和粳稻、早稻和中晚稻、糯稻和非糯稻。按留种方式分为常规水稻和杂交水稻。</p>
+              <a class="btn btn-large btn-primary" href="#shuidao">了解更多</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <img class="img-circle" src="../assets/img/examples/wall.jpg">
+          <h2>长城</h2>
+          <p>长城之称始于春秋战国时期，是长城最通用的称谓。《史记·楚世家》载：“齐宣王乘山岭之上，筑长城，东至海，西至济州，千余里，以备楚。”
+            长城不仅是中国也是世界上修建时间最长、工程量最大的一项古代防御工程，自西周时期开始，延续不断修筑了2000多年，
+            分布于中国北部和中部的广大土地上，总计长度达2万多千米
+          </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" src="../assets/img/examples/panda.jpg">
+          <h2>大熊猫</h2>
+          <p>别看大熊猫胖乎乎、毛茸茸，就以为它只会撒娇卖萌装可爱，实则它搞起外交、拉动经济的功力可都超一流的。
+            只有我们想不到，没有“国宝们”达不到，吃穷国外的动物园，赚足人们的喜爱，斩获世界各地的粉丝
+            ，衍生五花八门的周边……萌力十足的大熊猫作为国宝，创造了它相对应的价值，无论从历史文化、社会经济还是政治外交，
+            尤其情感上，我们早已离不开这个“国宝”</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" src="../assets/img/examples/asia.jpg">
+          <h2>稻田</h2>
+          <p>中国、日本、朝鲜半岛、东南亚、南亚、地中海沿岸、美国东南部、中美洲、大洋洲和非洲部分地区，
+            中国北方沿河地区也种植稻。也就是说，除了南极洲之外，几乎大部分地方都有稻米生长。
+            世界上种植水稻面积最大的国家是印度，种植面积将近5千万公顷，总产量为1亿5千万吨.
+            中国水稻的种植面积为3千万公顷左右，居世界第二，但是中国是世界上水稻产量最高的国家，总产量高达2亿吨以上。</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+
+      <hr class="featurette-divider">
+      <!-- START THE FEATURETTES -->
+      <div class="featurette" id="changcheng">
+        <img class="featurette-image pull-right img-circle" src="../assets/img/examples/wall-4055548_1280.jpg">
+        <h2 class="featurette-heading text-center">长城 <span class="muted">--获得新生</span></h2>
+        <p class="lead">长城修筑的历史可上溯到西周时期，发生在首都镐京（今陕西西安）的著名典故“烽火戏诸侯”就源于此 [1-6]  。
+          春秋战国时期列国争霸，互相防守，长城修筑进入第一个高潮，但此时修筑的长度都比较短。
+          秦灭六国统一天下后，秦始皇连接和修缮战国长城，始有万里长城之称。根据文物和测绘部门的全国性长城资源调查结果，明长城总长度为8851.8千米，
+          秦汉及早期长城超过1万千米，
+          总长超过2.1万千米。 [17]  现存长城文物本体包括长城墙体、壕堑/界壕、单体建筑、关堡、相关设施等各类遗存，总计4.3万余处（座/段）。</p>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="featurette "id="cat">
+        <img class="featurette-image pull-left img-circle" src="../assets/img/examples/panda-4461766_1280.jpg">
+        <h2 class="featurette-heading">熊猫 <span class="muted">See for yourself.</span></h2>
+        <p class="lead">大熊猫（学名：Ailuropoda melanoleuca）：属于食肉目、熊科、大熊猫亚科和大熊猫属唯一的哺乳动物。
+          仅有二个亚种。雄性个体稍大于雌性。体型肥硕似熊、丰腴富态，头圆尾短，头躯长1.2-1.8米，尾长10-12厘米。体重80-120千克
+          ，最重可达180千克，体色为黑白两色，脸颊圆，有大的黑眼圈，标志性的内八字的行走方式，也有解剖刀般锋利的爪子。大熊猫皮
+          肤厚，最厚处可达10毫米。黑白相间的外表，有利于隐蔽在密林的树上和积雪的地面而不易被天敌发现。</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette "id="shuidao">
+        <img class="featurette-image pull-right img-circle" src="../assets/img/examples/asia-1807582_1280.jpg">
+        <h2 class="featurette-heading">稻田 <span class="muted">Checkmate.</span></h2>
+        <p class="lead">水稻是稻属谷类作物，代表种为稻（学名：Oryza sativa L.）。水稻原产于中国和印度，七千年前中国长
+          江流域的先民们就曾种植水稻。水稻所结子实即稻谷，稻谷脱去颖壳后称糙米，糙米碾去米糠层即可得到大米。世界上近一半人口以大米为主食。
+          水稻除可食用外，还可以酿酒、制糖作工业原料，稻壳和稻秆可以作为牲畜饲料。中国水稻主产区主要是长江流域、珠江流域、
+          东北地区。水稻属于直接经济作物，大米饭是中国居民的主食，目前国内的水稻种植面积常规稻是2.45亿亩，
+          而杂交稻的种植面积是2亿亩。</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>that's all <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+      
+    </script>
+    <script src="../assets/js/holder/holder.js"></script>
+    <script type="text/javascript">
+
+$("a").click(function () {
+ 
+     $("html, body").animate({scrollTop: $($(this).attr("href")).offset().top -20+ "px"}, 500);
+  
+    return true;
+  
+ });
+    </script>
+  </body>
+</html
